@@ -2,4 +2,4 @@
 Reconstruction of the flappy bird game using Phaser
 
 ## Node Version
-Actual Node versio 16.13.0
+Actual Node version 16.13.0

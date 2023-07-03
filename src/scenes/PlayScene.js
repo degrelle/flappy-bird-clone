@@ -1,12 +1,11 @@
-import Phaser from 'phaser';
+import BaseScene from "./BaseScene";
 
 const PIPES_TO_RENDER = 4;
-class PlayScene extends Phaser.Scene {
+class PlayScene extends BaseScene {
     constructor(config){
-        super('PlayScene');
+        super('PlayScene', config);
 
         this.bird = null;
-        this.config = config;
         this.pipes = null;
 
         this.pipeVerticalDistanceRange = [150, 250];
@@ -19,7 +18,7 @@ class PlayScene extends Phaser.Scene {
     }
 
     create() {
-        this.createBG();
+        super.create();
 
         this.createBird();
 
@@ -170,6 +169,7 @@ class PlayScene extends Phaser.Scene {
         pauseButton.on('pointerdown', () => {
             this.physics.pause();
             this.scene.pause();
+            this.scene.launch('PauseScene');
         })
     }
 }
